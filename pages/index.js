@@ -1,59 +1,61 @@
-import styled from 'styled-components'
+import MainGrid from '../src/components/MainGrid';
+import Box from '../src/components/Box';
+import {AlurakutMenu, OrkutNostalgicIconSet} from '../src/lib/AlurakutCommons';
+import {ProfileRelationsBoxWrapper} from '../src/components/ProfileRelations';
 
-const Box = styled.div`
-  background: #FFFFFF;
-  border-radius: 8px;
-
-  `; /* crases para indicar o css da pagina */
-
-const MainGrid = styled.main`
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 500px;
-  display: grid;
-  grid-gap: 10px;
-  padding: 16px;
-    .profileArea {
-      display: none;
-      @media(min-width: 860px) {
-        display: block;
-      }
-    }
-
-  @media(min-width: 860px) {
-    max-width: 1110px;
-    display: grid;
-    grid-template-areas: "profileArea welcomeArea profileRelationsArea";
-    grid-template-columns: 160px 1fr 312px;
-  }
-  `;
+function ProfileSideBar(propriedades) {
+  return (
+    <Box>
+      {/* Bigode para usar o que esta no javascript dentro do html */}
+      <img src={ `https://github.com/${propriedades.user}.png` } style={{ borderRadius: "8px" }}/>
+    </Box>
+  )
+}
 
 export default function Home() {
+  const user = "GabrielMedradoS";
+  const favUsers = ["juunegreiros", "omariosouto", "peas"]
+
+  /* Importante: componente sempre com letra maiuscula */
   return (
-    <MainGrid>
-      <div className="profileArea" style={{gridArea: "profileArea"}}>
-        <Box>
-        <img src="https://github.com/GabrielMedradoS.png"/>
-        </Box>
-      </div>
-        
-      <div className="welcomeArea" style={{gridArea: "welcomeArea"}}>
-        <Box>
-        Welcome
-        </Box>
-      </div>
+    <>
+      <AlurakutMenu/>
+      <MainGrid>
+        <div className="profileArea" style={{gridArea: "profileArea"}}>
+            <ProfileSideBar user={user} /> {/* este componente vai receber uma propriedade user */}
+        </div>
+          
+        <div className="welcomeArea" style={{gridArea: "welcomeArea"}}>
+          <Box>
+            <h1 className="title">
+              Welcome
+            </h1>
+            <OrkutNostalgicIconSet />
+          </Box>
+        </div>
 
-      <div className="profileRelationsArea" style={{gridArea: "profileRelationsArea"}}>
-        <Box>
-          Friends
-        </Box>
+        <div className="profileRelationsArea" style={{gridArea: "profileRelationsArea"}}>
+          <ProfileRelationsBoxWrapper>
+            <h2 className="smallTitle">
+          Communities ({favUsers.length})
+            </h2>
 
-        <Box>
-        Communities 
-        </Box>
-      </div>
+          <ul>
+            {favUsers.map((itemAtual) => {
+              return (
+                <li>
+                  <a href={`/users/${itemAtual}`} key={itemAtual}>
+                    <img src={`https://github.com/${itemAtual}.png`} />
+                    <span>{itemAtual}</span>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>          
+          </ProfileRelationsBoxWrapper>
 
-    </MainGrid>
+        </div>
+      </MainGrid>
+    </>
   )
 }
