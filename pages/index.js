@@ -1,3 +1,4 @@
+import React from "react";
 import MainGrid from '../src/components/MainGrid';
 import Box from '../src/components/Box';
 import {AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet} from '../src/lib/AlurakutCommons';
@@ -23,7 +24,11 @@ function ProfileSideBar(propriedades) {
 }
 
 export default function Home() {
+  const [communities, setCommunities] = React.useState(["Alurakut"]); /* importando from react */
+/*   const communities = communities[0];
+  const setCommunities = communities[1]; mostrando manualmente o processo*/ 
   const user = "GabrielMedradoS";
+  /* const communities = ["Alurakut"]; */
   const favUsers = ["juunegreiros", "omariosouto", "peas"]
 
   /* Importante: componente sempre com letra maiuscula */
@@ -34,7 +39,8 @@ export default function Home() {
         <div className="profileArea" style={{gridArea: "profileArea"}}>
             <ProfileSideBar user={user} /> {/* este componente vai receber uma propriedade user */}
         </div>
-          
+
+
         <div className="welcomeArea" style={{gridArea: "welcomeArea"}}>
           <Box>
             <h1 className="title">
@@ -43,15 +49,49 @@ export default function Home() {
             <OrkutNostalgicIconSet />
           </Box>
 
+
           <Box>
             <h2>Oque você deseja fazer ?</h2>
-            <form>
-              
+            <form onSubmit={function handleNewCommunities(e) {
+              e.preventDefault();
+
+              const communitiesAtt = [...communities, 'Alura Stars'];
+              setCommunities(communitiesAtt)
+            }}>
+
+              <div>
+                <input placeholder="Qual vai ser o nome da sau comunidade?" name="title" aria-label="Qual vai ser o nome da sau comunidade?" />
+              </div>
+
+              <div>
+                <input placeholder="Coloque uma URL para usar como capa" name="title" aria-label="Coloque uma URL para usar como capa" />
+              </div>
+
+              <button>
+                Criar comunidade
+              </button>
+
             </form>
           </Box>
         </div>
 
+
         <div className="profileRelationsArea" style={{gridArea: "profileRelationsArea"}}>
+          <ProfileRelationsBoxWrapper>
+          <ul>
+            {communities.map((itemAtual) => {
+              return (
+                <li>
+                  <a href={`/users/${itemAtual}`} key={itemAtual}>
+                    {/* <img src={`https://github.com/${itemAtual}.png`} /> */}
+                    <span>{itemAtual}</span>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>  
+          </ProfileRelationsBoxWrapper>
+          
           <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
           Communities ({favUsers.length})
@@ -70,8 +110,9 @@ export default function Home() {
             })}
           </ul>          
           </ProfileRelationsBoxWrapper>
-
         </div>
+
+
       </MainGrid>
     </>
   )
