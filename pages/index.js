@@ -6,7 +6,7 @@ import {ProfileRelationsBoxWrapper} from '../src/components/ProfileRelations';
 
 function ProfileSideBar(propriedades) {
   return (
-    <Box>
+    <Box as="aside">
       {/* Bigode para usar o que esta no javascript dentro do html */}
       <img src={ `https://github.com/${propriedades.user}.png` } style={{ borderRadius: "8px" }} />
      
@@ -25,6 +25,7 @@ function ProfileSideBar(propriedades) {
 
 export default function Home() {
   const [communities, setCommunities] = React.useState([{
+    id: '1', 
     title:'Eu odeio acordar cedo',
     image:'https://alurakut.vercel.app/capa-comunidade-01.jpg'
   }]); /* importando from react */
@@ -60,6 +61,7 @@ export default function Home() {
               const dataForm = new FormData(e.target);
 
               const community = {
+                id: new Date().toISOString(),
                 title: dataForm.get('title'),
                 image: dataForm.get('image'),
               }
@@ -90,8 +92,8 @@ export default function Home() {
           <ul>
             {communities.map((itemAtual) => {
               return (
-                <li>
-                  <a href={`/users/${itemAtual.title}`} key={itemAtual.title}>
+                <li key={itemAtual.id}>
+                  <a href={`/users/${itemAtual.title}`}>
                     <img src={itemAtual.image} />
                     <span>{itemAtual.title}</span>
                   </a>
@@ -109,8 +111,8 @@ export default function Home() {
           <ul>
             {favUsers.map((itemAtual) => {
               return (
-                <li>
-                  <a href={`/users/${itemAtual}`} key={itemAtual}>
+                <li key={itemAtual}>
+                  <a href={`/users/${itemAtual}`}>
                     <img src={`https://github.com/${itemAtual}.png`} />
                     <span>{itemAtual}</span>
                   </a>
