@@ -58,8 +58,6 @@ export default function Home() {
             <form onSubmit={ function handleNewCommunities(e) {
               e.preventDefault();
               const dataForm = new FormData(e.target);
-              console.log('campo: ', dataForm.get('title'))
-              console.log('campo: ', dataForm.get('image'))
 
               const community = {
                 title: dataForm.get('title'),
@@ -71,11 +69,11 @@ export default function Home() {
             }}>
 
               <div>
-                <input placeholder="Qual vai ser o nome da sau comunidade?" name="title" aria-label="Qual vai ser o nome da sau comunidade?" />
+                <input placeholder="Qual vai ser o nome da sua comunidade?" name="title" aria-label="Qual vai ser o nome da sua comunidade?" />
               </div>
 
               <div>
-                <input placeholder="Coloque uma URL para usar como capa" name="title" aria-label="Coloque uma URL para usar como capa" />
+                <input placeholder="Coloque uma URL para usar como capa" name="image" aria-label="Coloque uma URL para usar como capa" />
               </div>
 
               <button>
