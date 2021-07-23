@@ -24,7 +24,10 @@ function ProfileSideBar(propriedades) {
 }
 
 export default function Home() {
-  const [communities, setCommunities] = React.useState(["Alurakut"]); /* importando from react */
+  const [communities, setCommunities] = React.useState([{
+    title:'Eu odeio acordar cedo',
+    image:'https://alurakut.vercel.app/capa-comunidade-01.jpg'
+  }]); /* importando from react */
 /*   const communities = communities[0];
   const setCommunities = communities[1]; mostrando manualmente o processo*/ 
   const user = "GabrielMedradoS";
@@ -52,10 +55,18 @@ export default function Home() {
 
           <Box>
             <h2>Oque você deseja fazer ?</h2>
-            <form onSubmit={function handleNewCommunities(e) {
+            <form onSubmit={ function handleNewCommunities(e) {
               e.preventDefault();
+              const dataForm = new FormData(e.target);
+              console.log('campo: ', dataForm.get('title'))
+              console.log('campo: ', dataForm.get('image'))
 
-              const communitiesAtt = [...communities, 'Alura Stars'];
+              const community = {
+                title: dataForm.get('title'),
+                image: dataForm.get('image'),
+              }
+
+              const communitiesAtt = [...communities, community];
               setCommunities(communitiesAtt)
             }}>
 
@@ -82,9 +93,9 @@ export default function Home() {
             {communities.map((itemAtual) => {
               return (
                 <li>
-                  <a href={`/users/${itemAtual}`} key={itemAtual}>
-                    {/* <img src={`https://github.com/${itemAtual}.png`} /> */}
-                    <span>{itemAtual}</span>
+                  <a href={`/users/${itemAtual.title}`} key={itemAtual.title}>
+                    <img src={itemAtual.image} />
+                    <span>{itemAtual.title}</span>
                   </a>
                 </li>
               )
