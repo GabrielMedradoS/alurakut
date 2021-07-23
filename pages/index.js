@@ -1,13 +1,23 @@
 import MainGrid from '../src/components/MainGrid';
 import Box from '../src/components/Box';
-import {AlurakutMenu, OrkutNostalgicIconSet} from '../src/lib/AlurakutCommons';
+import {AlurakutMenu, AlurakutProfileSidebarMenuDefault, OrkutNostalgicIconSet} from '../src/lib/AlurakutCommons';
 import {ProfileRelationsBoxWrapper} from '../src/components/ProfileRelations';
 
 function ProfileSideBar(propriedades) {
   return (
     <Box>
       {/* Bigode para usar o que esta no javascript dentro do html */}
-      <img src={ `https://github.com/${propriedades.user}.png` } style={{ borderRadius: "8px" }}/>
+      <img src={ `https://github.com/${propriedades.user}.png` } style={{ borderRadius: "8px" }} />
+     
+      <br></br>
+      <p>
+        <a className="boxLink" href={`https://github.com/${propriedades.user}`}>
+          @{propriedades.user}
+        </a>
+      </p> 
+      <br></br>
+    
+      <AlurakutProfileSidebarMenuDefault />
     </Box>
   )
 }
@@ -31,6 +41,13 @@ export default function Home() {
               Welcome
             </h1>
             <OrkutNostalgicIconSet />
+          </Box>
+
+          <Box>
+            <h2>Oque você deseja fazer ?</h2>
+            <form>
+              
+            </form>
           </Box>
         </div>
 
