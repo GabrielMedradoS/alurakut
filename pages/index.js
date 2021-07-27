@@ -48,14 +48,14 @@ export default function Home() {
         <div className="welcomeArea" style={{gridArea: "welcomeArea"}}>
           <Box>
             <h1 className="title">
-              Welcome
+              Bem vindo(a)
             </h1>
             <OrkutNostalgicIconSet />
           </Box>
 
 
           <Box>
-            <h2>Oque você deseja fazer ?</h2>
+            <h2>Oque você deseja fazer?</h2>
             <form onSubmit={ function handleNewCommunities(e) {
               e.preventDefault();
               const dataForm = new FormData(e.target);
@@ -88,24 +88,9 @@ export default function Home() {
 
 
         <div className="profileRelationsArea" style={{gridArea: "profileRelationsArea"}}>
-          <ProfileRelationsBoxWrapper>
-          <ul>
-            {communities.map((itemAtual) => {
-              return (
-                <li key={itemAtual.id}>
-                  <a href={`/users/${itemAtual.title}`}>
-                    <img src={itemAtual.image} />
-                    <span>{itemAtual.title}</span>
-                  </a>
-                </li>
-              )
-            })}
-          </ul>  
-          </ProfileRelationsBoxWrapper>
-          
-          <ProfileRelationsBoxWrapper>
+        <ProfileRelationsBoxWrapper>
             <h2 className="smallTitle">
-          Communities ({favUsers.length})
+          Amigos ({favUsers.length})
             </h2>
 
           <ul>
@@ -120,6 +105,25 @@ export default function Home() {
               )
             })}
           </ul>          
+          </ProfileRelationsBoxWrapper>
+
+          <ProfileRelationsBoxWrapper>
+          <h2 className="smallTitle">
+            Comunidades ({communities.length})
+          </h2>
+
+          <ul>
+            {communities.map((itemAtual) => {
+              return (
+                <li key={itemAtual.id}>
+                  <a href={`/users/${itemAtual.title}`}>
+                    <img src={itemAtual.image} />
+                    <span>{itemAtual.title}</span>
+                  </a>
+                </li>
+              )
+            })}
+          </ul>  
           </ProfileRelationsBoxWrapper>
         </div>
 
