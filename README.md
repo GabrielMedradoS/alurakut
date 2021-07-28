@@ -1,7 +1,9 @@
 ## Alurakut
+  <img alt="imageAlurakut" src=".github/Alurakut.png" width="100%">
 
 ### 💻 Projeto
-
+  Criaçao da pagina inicial do Orkut usando React
+  
 ### 🛠 Tecnologias
 <div>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5"  height="30" width="40"/>
