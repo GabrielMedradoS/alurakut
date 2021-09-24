@@ -3,6 +3,7 @@
 
 ### 💻 Projeto
   Criaçao da pagina inicial do Orkut usando React
+  Curso passo a passo disponibilizado pela Alura
   
 ### 🛠 Tecnologias
 <div>
