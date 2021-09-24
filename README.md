@@ -2,7 +2,7 @@
   <img alt="imageAlurakut" src=".github/Alurakut.png" width="100%">
 
 ### 💻 Projeto
-  Criaçao da pagina inicial do Orkut usando React
+  Criaçao da pagina inicial do Orkut usando React <br>
   Curso passo a passo disponibilizado pela Alura
   
 ### 🛠 Tecnologias
