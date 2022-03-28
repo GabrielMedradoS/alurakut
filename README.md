@@ -1,5 +1,16 @@
 ## Alurakut
 
+<p align="center">
+    <img alt="Platform" src="https://img.shields.io/static/v1?label=Platform&message=PC&color=blue&labelColor=white">
+    <a href="">
+        <img src="https://img.shields.io/badge/alurakut-alura-blue?&labelColor=white"></img>
+    </a>
+    <img alt="Repository size" src="https://img.shields.io/github/repo-size/GabrielMedradoS/alurakut?color=blue&labelColor=white">
+    <a href="https://github.com/GabrielMedradoS/alurakut/blob/master/License">
+        <img alt="License" src="https://img.shields.io/static/v1?label=License&message=MIT&color=blue&labelColor=white">
+    </a>
+</p>
+
 ### Layout 🚧
   <img alt="imageAlurakut" src=".github/Alurakut.png" width="100%">
   
@@ -60,7 +71,7 @@ $ npm start
 </div>
 
 ## Licença ⚖️
-This project is under the MIT license. See the archive [LICENSE]() for more details.
+This project is under the MIT license. See the archive [LICENSE](https://github.com/GabrielMedradoS/alurakut/blob/master/License) for more details.
 
 ## Autor ✍🏾
 
