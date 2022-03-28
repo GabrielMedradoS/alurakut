@@ -1,6 +1,6 @@
 ## Alurakut
 
-## Layout 🚧
+### Layout 🚧
   <img alt="imageAlurakut" src=".github/Alurakut.png" width="100%">
   
   <p align="center">
