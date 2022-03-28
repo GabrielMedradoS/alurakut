@@ -1,6 +1,6 @@
 ## Alurakut
 
-### Layout 🚧
+## Layout 🚧
   <img alt="imageAlurakut" src=".github/Alurakut.png" width="100%">
   
   <p align="center">
@@ -11,7 +11,7 @@
 </p>
 
 
-### Projeto 💻
+## Projeto 💻
   Criaçao da pagina inicial do Orkut usando React <br>
   Curso passo a passo disponibilizado pela Alura
   
@@ -51,7 +51,7 @@ $ npm start
 # The project will start at the door: 3000 - access http://localhost:3000
 ```
   
-### Tecnologias 🛠
+## Tecnologias 🛠
 <div>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5"  height="30" width="40"/>
   <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-plain-wordmark.svg" alt="css3"  height="30" width="40"/>
