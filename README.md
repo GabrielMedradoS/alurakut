@@ -12,7 +12,7 @@
 </p>
 
 ### Layout 🚧
-  <img alt="imageAlurakut" src=".github/Alurakut.png" width="100%">
+  <img alt="imageAlurakut" src=".github/github image.png" width="100%">
   
   <p align="center">
     <a href="#projeto-">Projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
